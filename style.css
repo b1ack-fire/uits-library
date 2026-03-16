@@ -1,0 +1,219 @@
+:root {
+    /* Light Mode Variables */
+    --bg-color: #f0f8ff; /* Alice Blue */
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --primary-color: #03a9f4; /* Light Blue */
+    --hover-color: #0288d1;
+    --border-radius: 15px; /* Soft rounded corners */
+    --transition: all 0.3s ease;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --primary-color: #bb86fc;
+    --hover-color: #3700b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--card-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+#timer-display {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    transition: var(--transition);
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* Container & Layout */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.hero-text {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.intro-quote {
+    font-style: italic;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+/* Card Services */
+.card-services {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.service-box input {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    width: 80%;
+}
+
+/* Departments Grid */
+.dept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dept-card {
+    background-color: var(--card-bg);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    font-weight: bold;
+    border: 2px solid transparent;
+}
+
+.dept-card:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 30px; /* More roundy on hover as requested */
+    transform: translateY(-5px);
+}
+
+/* Book Section & Table */
+.hidden {
+    display: none;
+}
+
+.search-bar-container {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    left: 15px;
+    color: var(--primary-color);
+}
+
+/* Optional Sweet Book Animation */
+@keyframes bookBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+.book-anim {
+    animation: bookBounce 2s infinite;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:hover {
+    background-color: rgba(0,0,0,0.02);
+}
+
+.back-btn {
+    background-color: #ff7043; /* Orange for back button */
+    margin-bottom: 15px;
+}

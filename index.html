@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UITS Campus Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">UITS Library</div>
+        <div class="nav-controls">
+            <div id="timer-display">Loading time...</div>
+            <button id="theme-toggle"><i class="fas fa-moon"></i> Dark Mode</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home-section">
+            <div class="hero-text">
+                <h1>Welcome to UITS Library</h1>
+                <p class="intro-quote">
+                    Libraries are essential in a process of giving citizens access to knowledge. In digital times they are needed more than ever before.
+                    Get your library card, and you’ll be able to borrow a print or electronic book, use free internet, or attend a course that will improve your digital skills.
+                    Most importantly, however, libraries are the places where you can expect smart and clear answers to even most difficult questions.
+                </p>
+            </div>
+
+            <div class="card-services">
+                <div class="service-box">
+                    <h3><i class="fas fa-id-card"></i> Check Library Card</h3>
+                    <input type="text" id="card-id-input" placeholder="Ex: 04325105101069">
+                    <button onclick="checkLibraryCard()">Check Status</button>
+                    <p id="card-status-msg"></p>
+                </div>
+                <div class="service-box">
+                    <h3><i class="fas fa-user-plus"></i> New Registration</h3>
+                    <p>Don't have a card yet?</p>
+                    <button onclick="alert('Registration form opening soon!')">Register Now</button>
+                </div>
+            </div>
+
+            <h2>Select Department</h2>
+            <div class="dept-grid">
+                <div class="dept-card" onclick="loadBooks('CSE/IT')">CSE / IT</div>
+                <div class="dept-card" onclick="loadBooks('Pharmacy')">Pharmacy</div>
+                <div class="dept-card" onclick="loadBooks('Civil')">Civil Engineering</div>
+                <div class="dept-card" onclick="loadBooks('EEE')">EEE</div>
+                <div class="dept-card" onclick="loadBooks('BBA')">BBA</div>
+                <div class="dept-card" onclick="loadBooks('English')">English</div>
+                <div class="dept-card" onclick="loadBooks('Law')">Law</div>
+                <div class="dept-card" onclick="loadBooks('Social Work')">Social Work</div>
+            </div>
+        </section>
+
+        <section id="book-section" class="hidden">
+            <button class="back-btn" onclick="showHome()"> <i class="fas fa-arrow-left"></i> Back to Home</button>
+            <h2 id="dept-title">Department Name</h2>
+            
+            <div class="search-bar-container">
+                <div class="search-box">
+                    <i class="fas fa-book book-anim"></i>
+                    <input type="text" id="search-input" placeholder="Search by book name or author..." onkeyup="filterBooks()">
+                </div>
+                <select id="edition-filter" onchange="filterBooks()">
+                    <option value="all">All Editions</option>
+                    <option value="1st">1st - 3rd Edition</option>
+                    <option value="4th">4th - 8th Edition</option>
+                    <option value="9th">9th+ Edition</option>
+                </select>
+            </div>
+
+            <div class="table-responsive">
+                <table id="book-table">
+                    <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Edition</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-table-body">
+                        </tbody>
+                </table>
+                <div id="coming-soon-msg" class="hidden">
+                    <h3>Coming soon. Thanks for visiting.</h3>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
